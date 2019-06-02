@@ -1,0 +1,50 @@
+<div class="container" id="gifLoader">
+  <div class="row">
+    <div class="col-xs-5">
+      <form [formGroup]="gifForm" (ngSubmit)="onSubmit()">
+        <div class="row" id="searchLine">
+
+          <div class="col-xs-5" id="searchGif">
+            <p id="searchP">Search GIF:</p>
+          </div>
+
+          <div class="col-sm-7 form-group">
+            <input
+              type="text"
+              id="search"
+              class="form-control"
+              formControlName="search"
+              required
+            >
+          </div>
+
+          <div class="col-xs-5 form-group">
+            <button
+              #submit
+              class="btn btn-primary"
+              [disabled]="!gifForm.valid"
+              type="submit">
+              submit
+            </button>
+          </div>
+
+        </div>
+
+        <div class="row" id="gifs">
+          <div class="col-md-12" id="gifsInner">
+            <app-gif-start
+              *ngIf="beforeSubmit">
+            </app-gif-start>
+
+            <span *ngIf="afterSubmit" (scroll)="onScroll()">
+              <a *ngFor="let gif of gifs">
+                <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(gif)" style="width: 240px; height: 250px;" frameborder="0"></iframe>
+              </a>
+            </span>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

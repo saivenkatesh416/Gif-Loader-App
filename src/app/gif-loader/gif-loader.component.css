@@ -1,0 +1,31 @@
+#gifLoader {
+  width:800px;
+  margin:0 auto;
+}
+
+#searchGif {
+  width:14.5%;
+  padding-top: 7px;
+}
+
+#gifs {
+  width:800px;
+  margin:0 auto;
+  display: inline-flex;
+}
+
+#searchP {
+  color: white;
+}
+
+#gifsInner {
+  margin-left: -15px;
+}
+
+#searchLine {
+  width:800px;
+  margin:0 auto;
+  display: inline-flex;
+  margin-left: 50px;
+  padding-top: 100px;
+}
